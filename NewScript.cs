@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Liboon : Node
+public partial class bancruz : Node
 {
 	public override void _Ready()
 	{
