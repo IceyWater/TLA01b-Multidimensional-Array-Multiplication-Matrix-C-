@@ -1,27 +1,30 @@
 using Godot;
 using System;
 
-public partial class NewScript : Node
-	static void Main()
+public partial class Liboon : Node
+{
+	public override void _Ready()
 	{
-		int[,] arr = new int[11, 11];
+		int[,] multTable = new int[11, 11];
 
-		for (int i = 1; i < 11; i++)
+		// Fill the multiplication table
+		for (int x = 1; x < 11; x++)
 		{
-			for (int j = 1; j < 11; j++)
+			for (int y = 0; y < 11; y++)
 			{
-				arr[i, j] = i * j;
+				multTable[y, x] = y * x;
 			}
 		}
 
-		for (int i = 1; i < 11; i++)
+		// Print the multiplication table
+		for (int y = 1; y < 11; y++)
 		{
-			for (int j = 1; j < 11; j++)
+			string line = "";
+			for (int x = 1; x < 11; x++)
 			{
-				Console.Write($"{arr[i, j],4}");
+				line += $"{multTable[y, x],4}";
 			}
-			Console.WriteLine();
+			GD.Print(line);
 		}
 	}
-}
 }
